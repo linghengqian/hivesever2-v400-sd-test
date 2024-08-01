@@ -3,6 +3,7 @@
 - For https://github.com/dbeaver/dbeaver/issues/22777 .
 
 - Verified under Ubuntu 22.04.4 and `SDKMAN!`.
+  Avoid using `testcontainers-java` due to the involvement of operations in dbeaver.
 
 ```shell
 sdk install java 22.0.2-graalce
