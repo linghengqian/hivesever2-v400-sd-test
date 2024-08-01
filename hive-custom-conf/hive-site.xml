@@ -45,12 +45,10 @@
         <value>false</value>
     </property>
 
-    <!--org.apache.hadoop.hive.conf.HiveConf.ConfVars#HIVE_SERVER2_SUPPORT_DYNAMIC_SERVICE_DISCOVERY-->
     <property>
         <name>hive.server2.support.dynamic.service.discovery</name>
         <value>true</value>
     </property>
-    <!--org.apache.hadoop.hive.conf.HiveConf.ConfVars#HIVE_ZOOKEEPER_QUORUM-->
     <property>
         <name>hive.zookeeper.quorum</name>
         <value>zookeeper-server:2181</value>

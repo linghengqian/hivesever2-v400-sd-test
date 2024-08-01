@@ -23,7 +23,7 @@ public class HiveTest {
             statement.execute("CREATE DATABASE demo_ds_0");
         }
         HikariConfig hikariConfig = new HikariConfig();
-        hikariConfig.setJdbcUrl("jdbc:hive2:///demo_ds_0");
+        hikariConfig.setJdbcUrl("jdbc:hive2://localhost:2181/demo_ds_0;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;");
         hikariConfig.setDriverClassName("org.apache.hive.jdbc.HiveDriver");
         try (HikariDataSource hikariDataSource = new HikariDataSource(hikariConfig);
              Connection connection = hikariDataSource.getConnection();
@@ -41,8 +41,6 @@ public class HiveTest {
             while (resultSet.next()) {
                 System.out.printf("%s\t%s%n", resultSet.getString(1), resultSet.getString(2));
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 }
