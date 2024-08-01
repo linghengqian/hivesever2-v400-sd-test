@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  zookeeper-server-first:
+    image: zookeeper:3.8.3-jre-17
+    restart: always
+    hostname: first.server.zookeeper.com
+    labels:
+      org.opencontainers.image.authors: "linghengqian@outlook.com"
+    ports:
+      - "2181:2181"
+  hive-server2-first:
+    image: apache/hive:4.0.0
+    hostname: first.server2.hive.com
+    restart: always
+    depends_on:
+      zookeeper-server-first:
+        condition: service_started
+    environment:
+      SERVICE_NAME: hiveserver2
+      HIVE_CUSTOM_CONF_DIR: /hive_custom_conf
+    labels:
+      org.opencontainers.image.authors: "linghengqian@outlook.com"
+    ports:
+      - "10000:10000"
+      - "10002:10002"
+    volumes:
+      - ./hive-custom-conf:/hive_custom_conf

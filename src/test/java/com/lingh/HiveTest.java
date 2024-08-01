@@ -28,15 +28,14 @@ public class HiveTest {
         try (HikariDataSource hikariDataSource = new HikariDataSource(hikariConfig);
              Connection connection = hikariDataSource.getConnection();
              Statement statement = connection.createStatement()) {
-            String tableName = "testHiveDriverTable";
-            statement.execute("drop table if exists " + tableName);
-            statement.execute("create table " + tableName + " (key int, value string)");
-            String sql = "show tables '" + tableName + "'";
+            statement.execute("drop table if exists testHiveDriverTable");
+            statement.execute("create table testHiveDriverTable (key int, value string)");
+            String sql = "show tables 'testHiveDriverTable'";
             ResultSet resultSet = statement.executeQuery(sql);
             if (resultSet.next()) {
                 System.out.println(resultSet.getString(1));
             }
-            sql = "describe " + tableName;
+            sql = "describe testHiveDriverTable";
             resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
                 System.out.printf("%s\t%s%n", resultSet.getString(1), resultSet.getString(2));
