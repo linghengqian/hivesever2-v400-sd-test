@@ -1,20 +1,18 @@
-version: "3.8"
-
 services:
-  zookeeper-server-first:
+  zookeeper-server:
     image: zookeeper:3.8.3-jre-17
     restart: always
-    hostname: first.server.zookeeper.com
+    hostname: server.zookeeper.com
     labels:
       org.opencontainers.image.authors: "linghengqian@outlook.com"
     ports:
       - "2181:2181"
-  hive-server2-first:
+  hive-server2:
     image: apache/hive:4.0.0
-    hostname: first.server2.hive.com
+    hostname: server2.hive.com
     restart: always
     depends_on:
-      zookeeper-server-first:
+      zookeeper-server:
         condition: service_started
     environment:
       SERVICE_NAME: hiveserver2

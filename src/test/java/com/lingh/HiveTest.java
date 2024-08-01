@@ -15,7 +15,7 @@ public class HiveTest {
     @Test
     void test() throws SQLException {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:hive2://localhost:10000/");
+        config.setJdbcUrl("jdbc:hive2://localhost:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;");
         config.setDriverClassName("org.apache.hive.jdbc.HiveDriver");
         try (HikariDataSource hikariDataSource = new HikariDataSource(config);
              Connection connection = hikariDataSource.getConnection();
@@ -23,7 +23,7 @@ public class HiveTest {
             statement.execute("CREATE DATABASE demo_ds_0");
         }
         HikariConfig hikariConfig = new HikariConfig();
-        hikariConfig.setJdbcUrl("jdbc:hive2://localhost:10000/demo_ds_0");
+        hikariConfig.setJdbcUrl("jdbc:hive2://localhost:2181/demo_ds_0;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;");
         hikariConfig.setDriverClassName("org.apache.hive.jdbc.HiveDriver");
         try (HikariDataSource hikariDataSource = new HikariDataSource(hikariConfig);
              Connection connection = hikariDataSource.getConnection();
