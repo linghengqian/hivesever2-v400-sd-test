@@ -2,8 +2,6 @@ services:
   zookeeper-server:
     image: zookeeper:3.8.3-jre-17
     restart: always
-    labels:
-      org.opencontainers.image.authors: "linghengqian@outlook.com"
     ports:
       - "2181:2181"
   hive-server2:
@@ -19,8 +17,6 @@ services:
     environment:
       SERVICE_NAME: hiveserver2
       HIVE_CUSTOM_CONF_DIR: /hive_custom_conf
-    labels:
-      org.opencontainers.image.authors: "linghengqian@outlook.com"
     ports:
       - "10000:10000"
       - "10002:10002"
