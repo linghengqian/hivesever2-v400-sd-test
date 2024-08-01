@@ -53,6 +53,6 @@
     <!--org.apache.hadoop.hive.conf.HiveConf.ConfVars#HIVE_ZOOKEEPER_QUORUM-->
     <property>
         <name>hive.zookeeper.quorum</name>
-        <value>localhost:2181</value>
+        <value>zookeeper-server:2181</value>
     </property>
 </configuration>

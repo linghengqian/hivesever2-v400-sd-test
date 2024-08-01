@@ -6,14 +6,15 @@
   Avoid using `testcontainers-java` due to the involvement of operations in dbeaver.
 
 ```shell
-sdk install java 22.0.2-graalce
-sdk use java 22.0.2-graalce
-
 git clone git@github.com:linghengqian/hive-embedded-mode-test.git
 cd ./hive-embedded-mode-test/
 docker compose -f ./docker-compose-lingh.yml pull
 docker compose -f ./docker-compose-lingh.yml up -d
+
+sdk install java 22.0.2-graalce
+sdk use java 22.0.2-graalce
 ./mvnw clean test
+
 docker compose -f ./docker-compose-lingh.yml down
 ```
 

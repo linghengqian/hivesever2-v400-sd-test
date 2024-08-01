@@ -23,4 +23,4 @@ services:
       - "10000:10000"
       - "10002:10002"
     volumes:
-      - ./src/test/resources/hive-custom-conf/hive-site.xml:/hive_custom_conf
+      - ./hive-custom-conf:/hive_custom_conf
