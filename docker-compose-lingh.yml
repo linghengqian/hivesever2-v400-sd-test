@@ -1,6 +1,6 @@
 services:
   zookeeper-server:
-    image: zookeeper:3.8.3-jre-17
+    image: zookeeper:3.9.2-jre-17
     restart: always
     ports:
       - "2181:2181"
