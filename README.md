@@ -2,7 +2,8 @@
 
 - For https://github.com/dbeaver/dbeaver/issues/22777 ,
   https://issues.apache.org/jira/browse/HIVE-28423 and
-  https://issues.apache.org/jira/browse/HIVE-28424 .
+  https://issues.apache.org/jira/browse/HIVE-28424 ,
+  https://issues.apache.org/jira/browse/HIVE-28430 .
 
 - Deploy a apache/zookeeper Web UI at `http://localhost:9001/` by executing
   `docker run -d --net host -e HTTP_PORT=9001 --name zoonavigator --restart unless-stopped elkozmon/zoonavigator:1.1.3`
