@@ -18,7 +18,7 @@ services:
       SERVICE_NAME: hiveserver2
       HIVE_CUSTOM_CONF_DIR: /hive_custom_conf
     ports:
-      - "10000:10000"
-      - "10002:10002"
+      - "23532:23532"
+      - "24225:10002"
     volumes:
       - ./hive-custom-conf:/hive_custom_conf

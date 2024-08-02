@@ -19,7 +19,7 @@ cd ./hivesever2-v400-sd-test/
 docker compose -f ./docker-compose-lingh.yml pull
 docker compose -f ./docker-compose-lingh.yml up -d
 
-# ... Wait five seconds for HiveServer2 to finish initializing.
+# ... Wait five seconds for HiveServer2 to finish initializing. Visit `localhost:24225` to verify that initialization is complete.
 
 ./mvnw clean test
 
@@ -29,6 +29,7 @@ docker compose -f ./docker-compose-lingh.yml down
 - Log as follows.
 
 ```shell
+$ ./mvnw clean test
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] -----------------< com.lingh:hivesever2-v400-sd-test >------------------
@@ -66,7 +67,7 @@ log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more in
 testhivedrivertable
 key     int
 value   string
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.931 s -- in com.lingh.HiveTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.286 s -- in com.lingh.HiveTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -75,7 +76,8 @@ value   string
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.120 s
-[INFO] Finished at: 2024-08-01T16:01:59+08:00
+[INFO] Total time:  6.139 s
+[INFO] Finished at: 2024-08-02T12:56:43+08:00
 [INFO] ------------------------------------------------------------------------
+
 ```

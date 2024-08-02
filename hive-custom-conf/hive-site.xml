@@ -53,4 +53,8 @@
         <name>hive.zookeeper.quorum</name>
         <value>zookeeper-server:2181</value>
     </property>
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>23532</value>
+    </property>
 </configuration>
